@@ -3,8 +3,9 @@ const user = [
     userId: 1,
     name: "Claudia",
     Bio: "I am a woman",
-    skillsGood: ["JavaScript", "node.js", "cypress"],
-    skillsBad: ["CSS", "React", "Backend"],
+    // converted to 1 single string from an array of strings for ease however might want to refactor in the future
+    skillsGood: "JavaScript, node.js, cypress",
+    skillsBad: "CSS, React, Backend"
   },
 ];
 
