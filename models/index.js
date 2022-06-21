@@ -5,3 +5,9 @@ export async function getUser() {
   console.log(result.rows);
   return result.rows;
 }
+
+export async function getSkills() {
+    let result = await query(`SELECT * FROM skills`);
+    console.log(result.rows);
+    return result.rows;
+  }
