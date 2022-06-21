@@ -5,7 +5,7 @@ const user = [
     Bio: "I am a woman",
     // converted to 1 single string from an array of strings for ease however might want to refactor in the future
     skillsGood: "JavaScript, node.js, cypress",
-    skillsBad: "CSS, React, Backend"
+    skillsBad: "CSS, React, Backend",
   },
 ];
 
@@ -30,4 +30,10 @@ const skills = [
   },
 ];
 
-export { user, skills };
+const goals = [
+  { goalId: 1, details: "get better at react", complete: true },
+  { goalId: 2, details: "get better at backend", complete: false },
+  { goalId: 3, details: "get better at all of it", complete: false },
+];
+
+export { user, skills, goals };
