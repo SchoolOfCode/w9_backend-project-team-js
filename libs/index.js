@@ -3,6 +3,8 @@ const user = [
     userId: 1,
     name: "Claudia",
     Bio: "I am a woman",
+    imageSrc:
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/therock-253954517-279993034023432-628278073878740852-n-1636731864.jpg",
     // converted to 1 single string from an array of strings for ease however might want to refactor in the future
     skillsGood: "JavaScript, node.js, cypress",
     skillsBad: "CSS, React, Backend",

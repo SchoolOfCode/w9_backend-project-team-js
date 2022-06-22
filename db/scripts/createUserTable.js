@@ -1,7 +1,7 @@
 import { query } from "../index.js";
 
 let sqlStr =
-  "CREATE TABLE IF NOT EXISTS userProfile (userId INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, name TEXT, bio TEXT, skillsGood TEXT, skillsBad TEXT);";
+  "CREATE TABLE IF NOT EXISTS userProfile (userId INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, name TEXT, bio TEXT, imageSrc TEXT, skillsGood TEXT, skillsBad TEXT);";
 
 async function createTable() {
   const res = await query(sqlStr);
