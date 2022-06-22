@@ -17,3 +17,23 @@ export async function getGoals() {
   console.log(result.rows);
   return result.rows;
 }
+
+// create new skill
+export async function createSkill(newSkill) {
+  const sqlString = `INSERT INTO skills(title, star, notes) VALUES($1, $2, $3) RETURNING *;`;
+
+  for (let i = 0; i < newSkill.length; i++) {
+    const params = [newSkill[i].title, newSkill[i].star, newSkill[i].notes];
+    const res = await query(sqlString, params);
+
+    console.log(res.rows[0].title, "Has been inserted");
+  }
+
+  // moved responseObject here since API response was wrongly showing previous array (before push)
+  const responseObject = {
+    success: true,
+    payload: `new skills was added to database`,
+  };
+
+  return responseObject;
+}
