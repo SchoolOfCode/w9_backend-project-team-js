@@ -33,9 +33,19 @@ const skills = [
 ];
 
 const goals = [
-  { goalId: 1, details: "get better at react", complete: true },
-  { goalId: 2, details: "get better at backend", complete: false },
-  { goalId: 3, details: "get better at all of it", complete: false },
+  {
+    goalId: 1,
+    details: "get better at react",
+    complete: true,
+    notes: "dummy notes",
+  },
+  {
+    goalId: 2,
+    details: "get better at backend",
+    complete: false,
+    notes: "work on the crud routes",
+  },
+  { goalId: 3, details: "get better at all of it", complete: false, notes: "" },
 ];
 
 export { user, skills, goals };
