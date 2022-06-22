@@ -76,3 +76,22 @@ export async function updateGoal(id, body) {
   };
   return responseObject;
 }
+
+// udpate boolean for complete column
+export async function updateSkill(id, body) {
+  let result = await query(
+    `UPDATE skills
+        SET title = $1,
+        star = $2,
+        notes = $3
+    WHERE skillsId = $4
+    RETURNING *;`,
+    [body.title, body.star, body.notes, id]
+  );
+  let responseObject = {
+    success: true,
+    message: "You've updated a skill",
+    payload: result.rows,
+  };
+  return responseObject;
+}
