@@ -57,3 +57,22 @@ export async function createGoal(newGoal) {
 
   return responseObject;
 }
+
+// udpate boolean for complete column
+export async function updateGoal(id, body) {
+  let result = await query(
+    `UPDATE goals
+    SET details = $1,
+        complete = $2,
+        notes = $3
+    WHERE goalId = $4
+    RETURNING *;`,
+    [body.details, body.complete, body.notes, id]
+  );
+  let responseObject = {
+    success: true,
+    message: "You've updated a goal",
+    payload: result.rows,
+  };
+  return responseObject;
+}
