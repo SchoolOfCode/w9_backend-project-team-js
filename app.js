@@ -20,3 +20,5 @@ app.use("/goals", goalsRouter);
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
 });
+
+export default app;
