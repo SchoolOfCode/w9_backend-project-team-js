@@ -95,3 +95,12 @@ export async function updateSkill(id, body) {
   };
   return responseObject;
 }
+
+// Delete skills from db
+export async function deleteSkillById(id) {
+  const result = await query(
+    `DELETE FROM skills WHERE skillsId = ${id} RETURNING * ;`
+  );
+
+  return result;
+}

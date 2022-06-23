@@ -1,7 +1,11 @@
 import express from "express";
 import { skills } from "../libs/index.js";
-import { getSkills, updateSkill } from "../models/index.js";
-import { createSkill } from "../models/index.js";
+import {
+  createSkill,
+  getSkills,
+  updateSkill,
+  deleteSkillById,
+} from "../models/index.js";
 
 const skillsRouter = express.Router();
 
@@ -20,6 +24,13 @@ skillsRouter.post("/", async (req, res) => {
 skillsRouter.put("/:id", async function (req, res) {
   let searchedId = req.params.id;
   let result = await updateSkill(searchedId, req.body);
+  res.json(result);
+});
+
+skillsRouter.delete("/:id", async function (req, res) {
+  const searchedId = Number(req.params.id);
+  deleteSkillById(searchedId);
+  const result = { success: true, payload: `Yeh bish it worked` };
   res.json(result);
 });
 
