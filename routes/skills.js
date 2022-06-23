@@ -30,7 +30,10 @@ skillsRouter.put("/:id", async function (req, res) {
 skillsRouter.delete("/:id", async function (req, res) {
   const searchedId = Number(req.params.id);
   deleteSkillById(searchedId);
-  const result = { success: true, payload: `Yeh bish it worked` };
+  const result = {
+    success: true,
+    payload: `The skills with id: ${searchedId} has been deleted`,
+  };
   res.json(result);
 });
 

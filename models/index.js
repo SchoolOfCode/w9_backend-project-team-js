@@ -104,3 +104,13 @@ export async function deleteSkillById(id) {
 
   return result;
 }
+
+// Delete Goal from db
+
+export async function deleteGoalById(id) {
+  const result = await query(
+    `DELETE FROM goals WHERE goalId = ${id} RETURNING * ;`
+  );
+
+  return result;
+}

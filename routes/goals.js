@@ -1,5 +1,10 @@
 import express from "express";
-import { getGoals, createGoal, updateGoal } from "../models/index.js";
+import {
+  getGoals,
+  createGoal,
+  updateGoal,
+  deleteGoalById,
+} from "../models/index.js";
 
 const goalsRouter = express.Router();
 
@@ -18,6 +23,16 @@ goalsRouter.post("/", async (req, res) => {
 goalsRouter.put("/:id", async function (req, res) {
   let searchedId = req.params.id;
   let result = await updateGoal(searchedId, req.body);
+  res.json(result);
+});
+
+goalsRouter.delete("/:id", async function (req, res) {
+  const searchedId = Number(req.params.id);
+  deleteGoalById(searchedId);
+  const result = {
+    success: true,
+    payload: `The goal with id: ${searchedId} has been deleted`,
+  };
   res.json(result);
 });
 
