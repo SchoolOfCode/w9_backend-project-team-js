@@ -10,7 +10,13 @@
     "dev": "nodemon app.js",
     "db:dropUserTable": "node ./db/scripts/dropUserTable.js",
     "db:createUserTable": "node ./db/scripts/createUserTable.js",
-    "db:popUserTable": "node ./db/scripts/popUserTable.js"
+    "db:popUserTable": "node ./db/scripts/popUserTable.js",
+    "db:dropGoalsTable": "node ./db/scripts/dropGoalsTable.js",
+    "db:createGoalsTable": "node ./db/scripts/createGoalsTable.js",
+    "db:popGoalsTable": "node ./db/scripts/popGoalsTable.js",
+    "db:dropSkillsTable": "node ./db/scripts/dropSkillsTable.js",
+    "db:createSkillsTable": "node ./db/scripts/createSkillsTable.js",
+    "db:popSkillsTable": "node ./db/scripts/popSkillsTable.js"
   },
   "repository": {
     "type": "git",
