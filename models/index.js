@@ -2,19 +2,19 @@ import { query } from "../db/index.js";
 
 export async function getUser() {
   let result = await query(`SELECT * FROM userProfile`);
-  console.log(result.rows);
+  // console.log(result.rows);
   return result.rows;
 }
 
 export async function getSkills() {
   let result = await query(`SELECT * FROM skills`);
-  console.log(result.rows);
+  // console.log(result.rows);
   return result.rows;
 }
 
 export async function getGoals() {
   let result = await query(`SELECT * FROM goals`);
-  console.log(result.rows);
+  // console.log(result.rows);
   return result.rows;
 }
 
@@ -26,7 +26,7 @@ export async function createSkill(newSkill) {
     const params = [newSkill[i].title, newSkill[i].star, newSkill[i].notes];
     const res = await query(sqlString, params);
 
-    console.log(res.rows[0].title, "Has been inserted");
+    // console.log(res.rows[0].title, "Has been inserted");
   }
 
   // moved responseObject here since API response was wrongly showing previous array (before push)
@@ -46,7 +46,7 @@ export async function createGoal(newGoal) {
     const params = [newGoal[i].details, newGoal[i].complete, newGoal[i].notes];
     const res = await query(sqlString, params);
 
-    console.log(res.rows[0].title, "Has been inserted");
+    // console.log(res.rows[0].title, "Has been inserted");
   }
 
   // moved responseObject here since API response was wrongly showing previous array (before push)
