@@ -85,7 +85,42 @@ Start the server
   npm run dev
 ```
 
+#### Database Documentation
 
+Create .env file
+
+```
+PGPORT=<Your database port>
+PGHOST=<Your database host>
+PGDATABASE=<Your database reference>
+PGUSER=<Your database username>
+PGPASSWORD=<Your database password>
+```
+
+Run these scripts to create the tables on your database:
+
+User
+```
+    npm run db:dropUserTable
+    npm run db:createUserTable
+    npm run db:popUserTable
+```
+
+Skills
+
+```
+   npm run db:dropSkillsTable
+   npm run db:createSkillsTable
+   npm run db:popSkillsTable
+```
+
+Goals
+
+```
+   npm run db:dropGoalsTable
+   npm run db:createGoalsTable
+   npm run db:popGoalsTable
+```
 
 
 ## Authors
