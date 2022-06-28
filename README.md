@@ -33,10 +33,17 @@ Backpack is the name of our project and we were aiming to build a Social app wit
 | ------ | -------------------- | --------------- | ----------------------------------------- | ------------------------------------------- |
 | GET    | /skills              |                 | all skills                                | { success: True, payload: Skills array }    |
 | POST   | /skills              | { body }        | create a new skill                        | { success: True, payload: new skills was added to database  } |
-| PUT    | /skills/<skills_id>  | { body }        | updated skill by ID                       | { payload: recipe }       |
-| DELETE | /skills/<skills_id>  |                 | delete skill by ID                            | { success: Boolean, payload: recipe }       |
+| PUT    | /skills/<skills_id>  | { body }        | updated skill by ID                       | { success: True, message: You've updated a skill, payload: Updated skill  }       |
+| DELETE | /skills/<skills_id>  |                 | delete skill by ID                            | { success: True, payload: The skills with id: <skills_id> has been deleted }       |
 
+#### Goals
 
+| Method | Path                 | Additional Info | Result                                    | Response                                    |
+| ------ | -------------------- | --------------- | ----------------------------------------- | ------------------------------------------- |
+| GET    | /goals              |                 | all goals                                | { success: True, payload: Goals array }    |
+| POST   | /goals              | { body }        | create a new goal                        | { success: True, payload: new goals was added to database  } |
+| PUT    | /goals/<goals_id>  | { body }        | updated goal by ID                       | { success: True, message: You've updated a goal, payload: Updated goal  }       |
+| DELETE | /goals/<goals_id>  |                 | delete goal by ID                            | { success: True, payload: The goal with id: <goals_id> has been deleted }       |
 
 
 ## Tech Stack
