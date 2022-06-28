@@ -1,29 +1,40 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8036224&assignment_repo_type=AssignmentRepo)
+
 # Backend for Backpack App (W9 Project) 
 
+This is the repo for our server and database, where we have built the API routes, postgresql queries and tests. Our API CRUD routes are connected to our database (Heroku) and the data is fed to our frond end via the GET routes.
+
+## Description
+Backpack is the name of our project and we were aiming to build a Social app with some productivity features (such as note taking and progress tracker).
+
+## Features of MVP
+- Read User details
+- Create Skills and Goals
+- Update Skills and Goals
+- Delete Skills and Goals
+
+
+[Link to Frontend](https://github.com/SchoolOfCode/w9_frontend-project-team-js)
 
 
 ## API Reference
 
-#### Get all items
+#### PORT Used: 3001
 
-```http
-  GET /api/items
-```
+#### User
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| Method | Path                 | Additional Info | Result                                    | Response                                    |
+| ------ | -------------------- | --------------- | ----------------------------------------- | ------------------------------------------- |
+| GET    | /user                |                 | all user                                  | { success: True, payload: User array }      |
 
-#### Get item
+#### Skills
 
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+| Method | Path                 | Additional Info | Result                                    | Response                                    |
+| ------ | -------------------- | --------------- | ----------------------------------------- | ------------------------------------------- |
+| GET    | /skills              |                 | all skills                                | { success: True, payload: Skills array }    |
+| POST   | /skills              | { body }        | create a new skill                        | { success: True, payload: new skills was added to database  } |
+| PUT    | /skills/<skills_id>  | { body }        | updated skill by ID                       | { payload: recipe }       |
+| DELETE | /skills/<skills_id>  |                 | delete skill by ID                            | { success: Boolean, payload: recipe }       |
 
 
 
@@ -67,20 +78,7 @@ Start the server
   npm run dev
 ```
 
-PORT Used: 3001
 
-
-## Documentation
-
-[Jest](https://jestjs.io/docs/getting-started)
-
-[PG](https://node-postgres.com/)
-
-[Express](https://expressjs.com/)
-
-[Nodemon](https://www.npmjs.com/package/nodemon)
-
-[Supertest](https://www.npmjs.com/package/supertest)
 
 
 ## Authors
