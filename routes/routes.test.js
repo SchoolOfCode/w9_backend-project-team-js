@@ -100,6 +100,23 @@ describe(`testing the skills route`, () => {
       payload: `The skills with id: 2 has been deleted`,
     });
   });
+  test("PUT request from /skills/3", async function () {
+    let response = await request(app)
+      .put("/skills/3")
+      .send({ title: "TESTname", star: 3, notes: "" })
+      .set("Accept", "application/json");
+    // HTTP response code;
+    expect(response.status).toBe(200);
+    // content type;
+    expect(response.header).toEqual(
+      expect.objectContaining({
+        "content-type": expect.stringContaining("application/json"),
+      })
+    );
+    //  updated data
+    let expected = { message: "You've updated a skill", payload: [{title: "TESTname", skillsid: 3, star: 3, notes: ""}], success: true };
+    expect(response.body).toMatchObject(expected);
+  });
 });
 
 describe(`testing the goals route`, () => {
@@ -190,6 +207,23 @@ describe(`testing the goals route`, () => {
       success: true,
       payload: `The skills with id: 2 has been deleted`,
     });
+  });
+  test("PUT request from /goals/3", async function () {
+    let response = await request(app)
+      .put("/goals/3")
+      .send({ details: "TESTname", complete: false, notes: "" })
+      .set("Accept", "application/json");
+    // HTTP response code;
+    expect(response.status).toBe(200);
+    // content type;
+    expect(response.header).toEqual(
+      expect.objectContaining({
+        "content-type": expect.stringContaining("application/json"),
+      })
+    );
+    //  updated data
+    let expected = { message: "You've updated a goal", payload: {details: "TESTname", goalid: 3, complete: false, notes: ""}, success: true };
+    expect(response.body).toMatchObject(expected);
   });
 });
 
