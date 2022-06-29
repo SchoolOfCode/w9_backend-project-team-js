@@ -208,9 +208,9 @@ describe(`testing the goals route`, () => {
       payload: `The skills with id: 2 has been deleted`,
     });
   });
-  test("PUT request from /goals/3", async function () {
+  test("PUT request from /goals/29", async function () {
     let response = await request(app)
-      .put("/goals/3")
+      .put("/goals/29")
       .send({ details: "TESTname", complete: false, notes: "" })
       .set("Accept", "application/json");
     // HTTP response code;
@@ -222,7 +222,7 @@ describe(`testing the goals route`, () => {
       })
     );
     //  updated data
-    let expected = { message: "You've updated a goal", payload: {details: "TESTname", goalid: 3, complete: false, notes: ""}, success: true };
+    let expected = { message: "You've updated a goal", payload: [{details: "TESTname", goalid: 29, complete: false, notes: ""}], success: true };
     expect(response.body).toMatchObject(expected);
   });
 });

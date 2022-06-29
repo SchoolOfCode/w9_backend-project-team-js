@@ -67,6 +67,7 @@ export async function updateGoal(id, body) {
     RETURNING *;`,
     [body.details, body.complete, body.notes, id]
   );
+  console.log(result);
   let responseObject = {
     success: true,
     message: "You've updated a goal",
