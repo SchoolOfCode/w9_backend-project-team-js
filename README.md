@@ -32,8 +32,8 @@ Backpack is the name of our project and we were aiming to build a Social app wit
 | Method | Path                 | Additional Info | Result                                    | Response                                    |
 | ------ | -------------------- | --------------- | ----------------------------------------- | ------------------------------------------- |
 | GET    | /skills              |                 | all skills                                | { success: True, payload: Skills array }    |
-| POST   | /skills              | { body }        | create a new skill                        | { success: True, payload: new skills was added to database  } |
-| PUT    | /skills/<skills_id>  | { body }        | updated skill by ID                       | { success: True, message: You've updated a skill, payload: Updated skill  }       |
+| POST   | /skills              | [{ details: String, complete: Boolean, notes: String }]        | create a new skill                        | { success: True, payload: new skills was added to database  } |
+| PUT    | /skills/<skills_id>  | { details: String, complete: Boolean, notes: String }        | updated skill by ID                       | { success: True, message: You've updated a skill, payload: Updated skill  }       |
 | DELETE | /skills/<skills_id>  |                 | delete skill by ID                            | { success: True, payload: The skills with id: <skills_id> has been deleted }       |
 
 #### Goals
@@ -41,8 +41,8 @@ Backpack is the name of our project and we were aiming to build a Social app wit
 | Method | Path                 | Additional Info | Result                                    | Response                                    |
 | ------ | -------------------- | --------------- | ----------------------------------------- | ------------------------------------------- |
 | GET    | /goals              |                 | all goals                                | { success: True, payload: Goals array }    |
-| POST   | /goals              | { body }        | create a new goal                        | { success: True, payload: new goals was added to database  } |
-| PUT    | /goals/<goals_id>  | { body }        | updated goal by ID                       | { success: True, message: You've updated a goal, payload: Updated goal  }       |
+| POST   | /goals              | [{ title: String, star: Number, notes: String }]        | create a new goal                        | { success: True, payload: new goals was added to database  } |
+| PUT    | /goals/<goals_id>  | { title: String, star: Number, notes: String }        | updated goal by ID                       | { success: True, message: You've updated a goal, payload: Updated goal  }       |
 | DELETE | /goals/<goals_id>  |                 | delete goal by ID                            | { success: True, payload: The goal with id: <goals_id> has been deleted }       |
 
 
