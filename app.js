@@ -1,4 +1,5 @@
 import express from "express";
+import cors from 'cors'
 import skillsRouter from "./routes/skills.js";
 import userRouter from "./routes/users.js";
 import goalsRouter from "./routes/goals.js";
@@ -6,6 +7,7 @@ import goalsRouter from "./routes/goals.js";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(cors())
 // So that we can understand any jsons that are returned
 app.use(express.json());
 
