@@ -12,7 +12,7 @@ import pg from "pg";
 // });
 
 export const pool = new pg.Pool({
-  connectionString: db.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false,
   },
