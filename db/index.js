@@ -1,5 +1,5 @@
 import pg from "pg";
-import "dotenv/config";
+// import dotenv from "dotenv/config";
 
 // export const pool = new pg.Pool({
 //   user: process.env.PGUSER,
